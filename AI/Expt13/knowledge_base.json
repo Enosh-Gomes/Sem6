@@ -1,0 +1,31 @@
+{
+    "emergency_symptoms": [
+        "breathing difficulty",
+        "chest pain",
+        "jaundice"
+    ],
+
+    "diseases": {
+
+        "malaria": {
+            "symptoms": {
+                "fever": 5,
+                "sweating": 5,
+                "chills": 4
+            },
+            "required": ["fever"],
+            "emergency": false
+        },
+
+        "dengue": {
+            "symptoms": {
+                "fever": 5,
+                "rash": 4,
+                "joint pain": 5
+            },
+            "required": ["fever"],
+            "emergency": true
+        }
+
+    }
+}
