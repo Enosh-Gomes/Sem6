@@ -1,0 +1,77 @@
+PS D:\codes\Sem 6> & "C:\Program Files\Python314\python.exe" "d:/codes/Sem 6/AI/Expt13/Expert_system_final.py"
+=== Expert System for Disease Diagnosis ===
+
+Answer the following questions:
+
+Do you have fever? (yes/no): yes
+Do you have fatigue? (yes/no): no
+Do you have cough? (yes/no): yes
+Do you have headache? (yes/no): no
+Do you have nausea? (yes/no): no
+Do you have abdominal pain? (yes/no): no
+Do you have runny nose? (yes/no): yes
+Do you have vomiting? (yes/no): no
+Do you have dizziness? (yes/no): no
+Do you have sore throat? (yes/no): yes
+
+===== FINAL DIAGNOSIS =====
+
+You are having Common Cold
+PS D:\codes\Sem 6> & "C:\Program Files\Python314\python.exe" "d:/codes/Sem 6/AI/Expt13/Expert_system_final.py"
+=== Expert System for Disease Diagnosis ===
+
+Answer the following questions:
+
+Do you have fever? (yes/no): no
+Do you have fatigue? (yes/no): no
+Do you have nausea? (yes/no): no
+Do you have cough? (yes/no): no
+Do you have headache? (yes/no): yes
+Do you have dizziness? (yes/no): no
+Do you have abdominal pain? (yes/no): no
+Do you have runny nose? (yes/no): yes
+Do you have sweating? (yes/no): yes
+Do you have rash? (yes/no): no
+
+===== FINAL DIAGNOSIS =====
+
+You are having Malaria
+PS D:\codes\Sem 6> & "C:\Program Files\Python314\python.exe" "d:/codes/Sem 6/AI/Expt13/Expert_system_final.py"
+=== Expert System for Disease Diagnosis ===
+
+Answer the following questions:
+
+Do you have fever? (yes/no): no
+Do you have fatigue? (yes/no): no
+Do you have cough? (yes/no): yes
+Do you have headache? (yes/no): no
+Do you have nausea? (yes/no): no
+Do you have runny nose? (yes/no): yes
+Do you have dizziness? (yes/no): no
+Do you have abdominal pain? (yes/no): no
+Do you have sore throat? (yes/no): yes
+Do you have shortness of breath? (yes/no): no
+
+===== FINAL DIAGNOSIS =====
+
+You are having Common Cold
+PS D:\codes\Sem 6> & "C:\Program Files\Python314\python.exe" "d:/codes/Sem 6/AI/Expt13/Expert_system_final.py"
+=== Expert System for Disease Diagnosis ===
+
+Answer the following questions:
+
+Do you have fever? (yes/no): no
+Do you have fatigue? (yes/no): yes
+Do you have cough? (yes/no): no
+Do you have headache? (yes/no): no
+Do you have nausea? (yes/no): yes
+Do you have abdominal pain? (yes/no): no
+Do you have dizziness? (yes/no): no
+Do you have vomiting? (yes/no): yes
+Do you have stomach pain? (yes/no): yes
+Do you have chest tightness? (yes/no): no
+
+===== FINAL DIAGNOSIS =====
+
+You are having Gastritis
+PS D:\codes\Sem 6>
