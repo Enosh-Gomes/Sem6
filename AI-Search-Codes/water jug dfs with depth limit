@@ -1,0 +1,62 @@
+# Define jug capacities and goal
+MAX_A = 4
+MAX_B = 3
+GOAL = 2
+DEPTH_LIMIT = 10  # You can change this
+
+# To store visited states
+visited = set()
+
+# DFS with depth limit
+def dfs(state, path, depth):
+    a, b = state
+
+    # Stop if goal is reached
+    if a == GOAL or b == GOAL:
+        path.append((a, b))
+        return path
+
+    # Stop if depth limit exceeded
+    if depth > DEPTH_LIMIT:
+        return None
+
+    # Mark current state as visited
+    visited.add(state)
+    path.append(state)
+
+    # Possible next states
+    next_states = []
+
+    # Fill Jug A
+    next_states.append((MAX_A, b))
+    # Fill Jug B
+    next_states.append((a, MAX_B))
+    # Empty Jug A
+    next_states.append((0, b))
+    # Empty Jug B
+    next_states.append((a, 0))
+    # Pour A -> B
+    transfer = min(a, MAX_B - b)
+    next_states.append((a - transfer, b + transfer))
+    # Pour B -> A
+    transfer = min(b, MAX_A - a)
+    next_states.append((a + transfer, b - transfer))
+
+    for next_state in next_states:
+        if next_state not in visited:
+            result = dfs(next_state, path.copy(), depth + 1)
+            if result:
+                return result
+
+    return None  # No solution found
+
+# Run DFS from (0, 0)
+solution = dfs((0, 0), [], 0)
+
+# Print solution
+if solution:
+    print("✅ Solution path (with depth limit):")
+    for step in solution:
+        print(f"Jug A: {step[0]} | Jug B: {step[1]}")
+else:
+    print("❌ No solution found within depth limit.")

@@ -1,0 +1,45 @@
+def dfs(graph, start, goal):
+    stack = [[start]]
+    visited = []
+
+    while stack:
+        path = stack.pop()
+        node = path[-1]
+
+        if node not in visited:
+            visited.append(node)
+
+        if node == goal:
+            print("\nTraversal Path:", " -> ".join(visited))
+            return path  # solution path
+
+        for neighbour in reversed(graph.get(node, [])):  # reversed for proper DFS order
+            if neighbour not in path:
+                new_path = list(path)
+                new_path.append(neighbour)
+                stack.append(new_path)
+
+    print("\nTraversal Path:", " -> ".join(visited))
+    return None
+
+
+# ---- Input Section ----
+graph = {}
+n = int(input("Enter number of nodes: "))
+
+for _ in range(n):
+    node = input("Enter node: ")
+    neighbours = input("Enter its neighbours (space-separated): ").split()
+    graph[node] = neighbours
+
+start = input("\nEnter start node: ")
+goal = input("Enter goal node: ")
+
+# ---- Solve ----
+solution = dfs(graph, start, goal)
+
+# ---- Output ----
+if solution:
+    print("Solution Path:", " -> ".join(solution))
+else:
+    print("No path found.")

@@ -1,0 +1,60 @@
+# Jug capacities and goal
+MAX_A = 4
+MAX_B = 3
+GOAL = 2
+DEPTH_LIMIT = 10  # Change as needed
+
+def is_goal(state):
+    a, b = state
+    return a == GOAL or b == GOAL
+
+def get_next_states(a, b):
+    states = []
+    # Fill Jug A
+    states.append((MAX_A, b))
+    # Fill Jug B
+    states.append((a, MAX_B))
+    # Empty Jug A
+    states.append((0, b))
+    # Empty Jug B
+    states.append((a, 0))
+    # Pour A -> B
+    transfer = min(a, MAX_B - b)
+    states.append((a - transfer, b + transfer))
+    # Pour B -> A
+    transfer = min(b, MAX_A - a)
+    states.append((a + transfer, b - transfer))
+    return states
+
+def dfs_iterative(start):
+    stack = [(start, [start], 0)]  # (state, path, depth)
+    visited = set()
+
+    while stack:
+        (a, b), path, depth = stack.pop()
+
+        if is_goal((a, b)):
+            return path
+
+        if depth > DEPTH_LIMIT or (a, b) in visited:
+            continue
+
+        visited.add((a, b))
+
+        for state in get_next_states(a, b):
+            if state not in visited:
+                stack.append((state, path + [state], depth + 1))
+
+    return None  # No solution within depth limit
+
+# Run
+start = (0, 0)
+solution = dfs_iterative(start)
+
+# Output
+if solution:
+    print("✅ Solution path (DFS iterative):")
+    for step in solution:
+        print(f"Jug A: {step[0]} | Jug B: {step[1]}")
+else:
+    print("❌ No solution found within depth limit.")
